@@ -1,0 +1,2 @@
+export { Loader } from "./Loader";
+export type { LoaderVariant } from "./Loader";

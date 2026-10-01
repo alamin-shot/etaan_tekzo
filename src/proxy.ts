@@ -1,0 +1,10 @@
+import { NextResponse, type NextRequest } from "next/server";
+
+export function proxy(_request: NextRequest) {
+    // Reserved for auth gating once the real backend is wired.
+    return NextResponse.next();
+}
+
+export const config = {
+    matcher: ["/((?!_next/static|_next/image|favicon.ico|images).*)"],
+};
