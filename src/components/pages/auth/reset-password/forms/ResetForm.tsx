@@ -7,17 +7,20 @@ import { Form } from "@/components/shared/form/form";
 import { PasswordField } from "@/components/shared/form/password-field";
 import { Button } from "@/components/ui/button";
 import { StepCounter } from "@/components/features/auth/step-counter";
-import { resetPasswordSchema, type ResetPasswordSchema } from "@/validations/reset-password";
+import {
+    resetPasswordFormBase,
+    type ResetPasswordForm,
+} from "@/validations/reset-password";
 import { resetPassword } from "@/services/auth";
 import { ROUTES } from "@/config/routes";
 import { AUTH_STEPS } from "@/constants/auth-steps";
 
-resolver: zodResolver(resetPasswordFormBase)
+type FormShape = ResetPasswordForm;
 
 export function ResetForm({ token }: { token: string }) {
     const router = useRouter();
     const form = useForm<FormShape>({
-        resolver: zodResolver(resetPasswordSchema.omit({ token: true })),
+        resolver: zodResolver(resetPasswordFormBase),
         defaultValues: { password: "", confirmPassword: "" },
     });
 
@@ -39,13 +42,28 @@ export function ResetForm({ token }: { token: string }) {
                 Create a new password for your account.
             </p>
             <div className="space-y-5">
-                <PasswordField<FormShape> name="password" label="Password" placeholder="Enter new password" autoComplete="new-password" />
-                <PasswordField<FormShape> name="confirmPassword" label="Confirm password" placeholder="Re-enter new password" autoComplete="new-password" />
+                <PasswordField<FormShape>
+                    name="password"
+                    label="Password"
+                    placeholder="Enter new password"
+                    autoComplete="new-password"
+                />
+                <PasswordField<FormShape>
+                    name="confirmPassword"
+                    label="Confirm password"
+                    placeholder="Re-enter new password"
+                    autoComplete="new-password"
+                />
             </div>
             <div className="mt-8">
-                <Button type="submit" loading={form.formState.isSubmitting}>Continue</Button>
+                <Button type="submit" loading={form.formState.isSubmitting}>
+                    Continue
+                </Button>
             </div>
-            <StepCounter current={AUTH_STEPS.RESET_PASSWORD.current} total={AUTH_STEPS.RESET_PASSWORD.total} />
+            <StepCounter
+                current={AUTH_STEPS.RESET_PASSWORD.current}
+                total={AUTH_STEPS.RESET_PASSWORD.total}
+            />
         </Form>
     );
 }

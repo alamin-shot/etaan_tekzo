@@ -22,7 +22,6 @@ export function OtpField<T extends FieldValues>({
                     <OtpInput
                         value={typeof field.value === "string" ? field.value : ""}
                         onChange={field.onChange}
-                        onComplete={onComplete}
                         invalid={!!error}
                         autoFocus
                     />

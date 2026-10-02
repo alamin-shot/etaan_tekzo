@@ -14,3 +14,10 @@ export const resetPasswordFormBase = resetPasswordBase
     });
 
 export type ResetPasswordForm = z.infer<typeof resetPasswordFormBase>;
+
+export const resetPasswordSchema = resetPasswordBase.refine(
+    (v) => v.password === v.confirmPassword,
+    { message: "Passwords do not match", path: ["confirmPassword"] },
+);
+
+export type ResetPasswordSchema = z.infer<typeof resetPasswordSchema>;

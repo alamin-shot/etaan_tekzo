@@ -6,7 +6,6 @@ import clsx from "clsx";
 export type OtpInputProps = {
     value: string;
     onChange: (value: string) => void;
-    onComplete?: (value: string) => void;
     invalid?: boolean;
     length?: number;
     autoFocus?: boolean;
@@ -15,7 +14,6 @@ export type OtpInputProps = {
 export function OtpInput({
     value,
     onChange,
-    onComplete,
     invalid,
     length = 4,
     autoFocus,
@@ -26,9 +24,7 @@ export function OtpInput({
     const setDigit = (index: number, digit: string) => {
         const next = digits.slice();
         next[index] = digit;
-        const joined = next.join("").slice(0, length);
-        onChange(joined);
-        if (joined.length === length) onComplete?.(joined);
+        onChange(next.join("").slice(0, length));
     };
 
     const handleChange = (index: number, raw: string) => {
@@ -54,9 +50,7 @@ export function OtpInput({
         if (!pasted) return;
         const merged = (digits.slice(0, index).join("") + pasted).slice(0, length);
         onChange(merged);
-        const focusIndex = Math.min(merged.length, length - 1);
-        refs.current[focusIndex]?.focus();
-        if (merged.length === length) onComplete?.(merged);
+        refs.current[Math.min(merged.length, length - 1)]?.focus();
     };
 
     return (
@@ -64,7 +58,9 @@ export function OtpInput({
             {digits.map((digit, i) => (
                 <input
                     key={i}
-                    ref={(el) => { refs.current[i] = el; }}
+                    ref={(el) => {
+                        refs.current[i] = el;
+                    }}
                     value={digit}
                     onChange={(e) => handleChange(i, e.target.value)}
                     onKeyDown={(e) => handleKey(i, e)}
