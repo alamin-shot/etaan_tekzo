@@ -9,7 +9,7 @@ export function FilterPanel() {
     const { params, setParam } = useShopParams();
 
     return (
-        <div className="rounded-2xl bg-white p-5 text-ink">
+        <div className="rounded-2xl bg-white p-5 text-ink border border-black/5 shadow-sm">
             <FilterGroup
                 title="Clothing"
                 options={CLOTHING_OPTIONS}

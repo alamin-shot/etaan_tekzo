@@ -14,7 +14,7 @@ export function WishlistButton({ id }: { id: string }) {
         <IconButton
             label={active ? "Remove from wishlist" : "Add to wishlist"}
             onClick={() => dispatch(wishlistActions.toggle(id))}
-            className="bg-white/90 text-ink hover:bg-white"
+            className="bg-red-500/20 text-ink "
         >
             <HeartIcon className="h-4 w-4" filled={active} />
         </IconButton>
