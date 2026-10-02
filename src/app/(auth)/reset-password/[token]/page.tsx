@@ -1,6 +1,6 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { ResetForm } from "@/components/pages/auth/reset-password/forms";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { ResetForm } from "@/components/pages/auth/reset-password";
 
 export const metadata: Metadata = { title: "Set new password — Etan" };
 

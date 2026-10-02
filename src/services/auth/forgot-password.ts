@@ -1,3 +1,5 @@
+import "server-only"
+
 import { client, normalizeError } from "@/lib/http";
 import { mockForgotPassword } from "@/mocks/auth";
 import { env } from "@/config/env";

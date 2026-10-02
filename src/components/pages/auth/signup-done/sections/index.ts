@@ -1,1 +1,1 @@
-export { DoneLeft } from "./sections/DoneLeft";
+export { DoneLeft } from "./DoneLeft";

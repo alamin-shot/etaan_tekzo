@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { CheckEmailResend } from "@/components/features/auth/check-email-resend";
 import { ROUTES } from "@/config/routes";
+import { CheckEmailResend } from "@/components/features/auth/check-email-resend/CheckEmailResend";
 
 export function CheckEmailLeft({ email }: { email: string }) {
     return (

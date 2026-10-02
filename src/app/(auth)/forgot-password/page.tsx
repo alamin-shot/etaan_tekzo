@@ -1,6 +1,7 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { ForgotForm } from "@/components/pages/auth/forgot-password/forms";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { ForgotForm } from "@/components/pages/auth/forgot-password";
+
 
 export const metadata: Metadata = { title: "Forgot password — Etan" };
 

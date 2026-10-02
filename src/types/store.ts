@@ -1,5 +1,4 @@
 import type { AuthUser } from "./auth";
-// Appended to src/types/store.ts
 import type { makeStore } from "@/store";
 
 export type AppStore = ReturnType<typeof makeStore>;

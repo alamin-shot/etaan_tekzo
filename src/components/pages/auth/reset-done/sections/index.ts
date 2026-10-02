@@ -1,1 +1,1 @@
-export { ResetDoneLeft } from "./sections/ResetDoneLeft";
+export { ResetDoneLeft } from "./ResetDoneLeft";

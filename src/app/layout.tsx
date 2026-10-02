@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { StoreProvider } from "@/store/provider";
 import { SessionOverlay } from "@/components/features/auth/session-overlay";
-import "@/styles/globals.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Etan",

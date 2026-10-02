@@ -1,6 +1,7 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { CheckEmailLeft } from "@/components/pages/auth/check-email/sections";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { CheckEmailLeft } from "@/components/pages/auth/check-email";
+
 
 export const metadata: Metadata = { title: "Check your email — Etan" };
 

@@ -14,6 +14,8 @@ import {
 import { resetPassword } from "@/services/auth";
 import { ROUTES } from "@/config/routes";
 import { AUTH_STEPS } from "@/constants/auth-steps";
+import { post } from "@/lib/http/api";
+import { ResetPasswordResponse } from "@/types/auth";
 
 type FormShape = ResetPasswordForm;
 
@@ -25,7 +27,10 @@ export function ResetForm({ token }: { token: string }) {
     });
 
     const onSubmit = async (values: FormShape) => {
-        const res = await resetPassword({ token, password: values.password });
+        const res = await post<{ email: string }>("/reset-password", {
+            token,
+            password: values.password,
+        });
         if (!res.ok) {
             form.setError("password", { message: res.message });
             return;

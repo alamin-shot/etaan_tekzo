@@ -1,6 +1,6 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { ResetDoneLeft } from "@/components/pages/auth/reset-done/sections";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { ResetDoneLeft } from "@/components/pages/auth/reset-done";
 
 export const metadata: Metadata = { title: "Password reset — Etan" };
 

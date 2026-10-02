@@ -1,1 +1,1 @@
-export { CheckEmailLeft } from "./sections/CheckEmailLeft";
+export { CheckEmailLeft } from "./CheckEmailLeft";

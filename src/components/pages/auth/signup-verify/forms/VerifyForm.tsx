@@ -12,6 +12,8 @@ import { ROUTES } from "@/config/routes";
 import { AUTH_STEPS } from "@/constants/auth-steps";
 import { OtpField } from "@/components/shared/form/otp-field";
 import { StepCounter } from "@/components/features/auth/step-counter";
+import { AuthSession, VerifyResponse } from "@/types/auth";
+import { post } from "@/lib/http/api";
 
 export function VerifyForm({ email }: { email: string }) {
     const router = useRouter();
@@ -21,14 +23,13 @@ export function VerifyForm({ email }: { email: string }) {
     });
 
     const submit = async (values: OtpSchema) => {
-        const res = await verifyEmail(values);
+        const res = await post<AuthSession>("/verify", values);
         if (!res.ok) {
             form.setError("code", { message: res.message });
             return;
         }
         router.push(ROUTES.signupDone);
     };
-
     return (
         <Form form={form} onSubmit={submit} className="max-w-md w-full">
             <h1 className="text-3xl md:text-4xl font-semibold uppercase tracking-wide mb-3">

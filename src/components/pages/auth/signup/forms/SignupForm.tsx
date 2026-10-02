@@ -8,11 +8,14 @@ import { Form } from "@/components/shared/form/form";
 import { TextField } from "@/components/shared/form/text-field";
 import { PasswordField } from "@/components/shared/form/password-field";
 import { Button } from "@/components/ui/button";
-import { StepCounter } from "@/components/features/auth/step-counter";
 import { signupSchema, type SignupSchema } from "@/validations/signup";
 import { signup } from "@/services/auth";
 import { ROUTES } from "@/config/routes";
 import { AUTH_STEPS } from "@/constants/auth-steps";
+import { StepCounter } from "@/components/features/auth/step-counter";
+import { SignupResponse } from "@/types/auth";
+import { post } from "@/lib/http/api";
+import { ApiError } from "next/dist/server/api-utils";
 
 export function SignupForm() {
     const router = useRouter();
@@ -22,7 +25,7 @@ export function SignupForm() {
     });
 
     const onSubmit = async (values: SignupSchema) => {
-        const res = await signup(values);
+        const res = await post<{ email: string } | ApiError>("/signup", values);
         if (!res.ok) {
             form.setError("email", { message: res.message });
             return;

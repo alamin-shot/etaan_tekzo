@@ -1,6 +1,6 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { DoneLeft } from "@/components/pages/auth/signup-done/sections/DoneLeft";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { DoneLeft } from "@/components/pages/auth/signup-done";
 
 export const metadata: Metadata = { title: "Account created — Etan" };
 

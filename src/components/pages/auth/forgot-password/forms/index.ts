@@ -1,1 +1,1 @@
-export { ForgotForm } from "./forms/ForgotForm";
+export { ForgotForm } from "./ForgotForm";

@@ -9,8 +9,9 @@ import { TextField } from "@/components/shared/form/text-field";
 import { PasswordField } from "@/components/shared/form/password-field";
 import { Button } from "@/components/ui/button";
 import { loginSchema, type LoginSchema } from "@/validations/login";
-import { login } from "@/services/auth";
+import { post } from "@/lib/http/api";
 import { ROUTES } from "@/config/routes";
+import type { AuthSession, LoginResponse } from "@/types/auth";
 
 export function LoginForm() {
     const router = useRouter();
@@ -20,7 +21,7 @@ export function LoginForm() {
     });
 
     const onSubmit = async (values: LoginSchema) => {
-        const res = await login(values);
+        const res = await post<AuthSession>("/login", values);
         if (!res.ok) {
             form.setError("email", { message: res.message });
             return;

@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { forgotPasswordSchema, type ForgotPasswordSchema } from "@/validations/forgot-password";
 import { forgotPassword } from "@/services/auth";
 import { ROUTES } from "@/config/routes";
+import { ForgotPasswordResponse } from "@/types/auth";
+import { post } from "@/lib/http/api";
+import { ApiError } from "next/dist/server/api-utils";
 
 export function ForgotForm() {
     const router = useRouter();
@@ -19,7 +22,7 @@ export function ForgotForm() {
     });
 
     const onSubmit = async (values: ForgotPasswordSchema) => {
-        await forgotPassword(values);
+        await post<{ email: string } | ApiError>("/forgot-password", values);
         router.push(`${ROUTES.checkEmail}?email=${encodeURIComponent(values.email)}`);
     };
 

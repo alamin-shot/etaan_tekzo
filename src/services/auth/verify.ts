@@ -1,3 +1,5 @@
+import "server-only"
+
 import { client, normalizeError } from "@/lib/http";
 import { mockVerify } from "@/mocks/auth";
 import { env } from "@/config/env";

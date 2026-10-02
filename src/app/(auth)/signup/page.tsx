@@ -1,6 +1,6 @@
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { SignupForm } from "@/components/pages/auth/signup/forms/SignupForm";
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { SignupForm } from "@/components/pages/auth/signup";
 
 export const metadata: Metadata = {
     title: "Sign up — Etan",

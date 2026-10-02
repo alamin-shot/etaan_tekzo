@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { forgotPassword } from "@/services/auth";
+
+import { post } from "@/lib/http/api";
 
 export function CheckEmailResend({ email }: { email: string }) {
     const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
 
     const resend = async () => {
         setState("sending");
-        await forgotPassword({ email });
+        await post("/forgot-password", { email });
         setState("sent");
     };
 

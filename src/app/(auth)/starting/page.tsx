@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell";
-import { StartingHero, StartingActions } from "@/components/pages/auth/starting";
+import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { StartingHero } from "@/components/pages/auth/starting/sections/StartingHero";
+import { StartingActions } from "@/components/pages/auth/starting/sections/StartingActions";
+
 
 export const metadata: Metadata = {
     title: "Welcome — Etan",
