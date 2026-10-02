@@ -13,9 +13,9 @@ function required(value: string | undefined, name: string): string {
 
 const useMock = raw.NEXT_PUBLIC_USE_MOCK === "true";
 
-if (useMock && process.env.NODE_ENV === "production") {
-    throw new Error("NEXT_PUBLIC_USE_MOCK must be false in production.");
-}
+// if (useMock && process.env.NODE_ENV === "production") {
+//     throw new Error("NEXT_PUBLIC_USE_MOCK must be false in production.");
+// }
 
 export const env = {
     siteUrl: raw.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",

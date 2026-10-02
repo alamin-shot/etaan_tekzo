@@ -3,7 +3,7 @@ export function HeartIcon({ filled, className }: { filled?: boolean; className?:
         <svg
             viewBox="0 0 24 24"
             fill={filled ? "#ef4444" : "none"}
-            stroke="#ef4444"
+            stroke={filled ? "#ef4444" : "currentColor"}
             strokeWidth="1.6"
             strokeLinecap="round"
             strokeLinejoin="round"
