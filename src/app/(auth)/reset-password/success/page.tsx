@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Password reset — Etan" };
 
 export default function ResetSuccessPage() {
     return (
-        <AuthShell heroSrc="/images/auth/hero-forgot.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/authImg1.png" heroAlt="Etan hero">
             <ResetDoneLeft />
         </AuthShell>
     );

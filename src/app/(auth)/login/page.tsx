@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
     return (
-        <AuthShell heroSrc="/images/auth/hero-login.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/authImg2.png" heroAlt="Etan hero">
             <LoginForm />
         </AuthShell>
     );

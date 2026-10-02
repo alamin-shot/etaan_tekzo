@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AuthShell } from "@/components/layout/auth-shell/AuthShell";
+import { AuthShellFullBleed } from "@/components/layout/auth-shell";
 import { StartingHero } from "@/components/pages/auth/starting/sections/StartingHero";
 import { StartingActions } from "@/components/pages/auth/starting/sections/StartingActions";
 
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function StartingPage() {
     return (
-        <AuthShell heroSrc="/images/auth/hero-starting.jpg" heroAlt="Etan hero">
+        <AuthShellFullBleed heroSrc="/image/authImg1.jpg" heroAlt="Etan">
             <StartingHero />
             <StartingActions />
-        </AuthShell>
+        </AuthShellFullBleed>
     );
 }

@@ -12,7 +12,7 @@ export default async function CheckEmailPage({
 }) {
     const { email = "" } = await searchParams;
     return (
-        <AuthShell heroSrc="/images/auth/hero-forgot.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/authImg3.png" heroAlt="Etan hero">
             <CheckEmailLeft email={email} />
         </AuthShell>
     );

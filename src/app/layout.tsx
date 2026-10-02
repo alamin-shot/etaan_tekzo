@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { StoreProvider } from "@/store/provider";
 import { SessionOverlay } from "@/components/features/auth/session-overlay";
 import "./globals.css";
+import { ToastHost } from "@/components/shared/toast/ToastHost";
 
 export const metadata: Metadata = {
   title: "Etan",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreProvider>
           {children}
           <SessionOverlay />
+          <ToastHost />
         </StoreProvider>
       </body>
     </html>

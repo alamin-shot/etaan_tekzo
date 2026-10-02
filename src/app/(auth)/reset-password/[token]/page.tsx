@@ -11,7 +11,7 @@ export default async function ResetPasswordPage({
 }) {
     const { token } = await params;
     return (
-        <AuthShell heroSrc="/images/auth/hero-forgot.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/auth_etaan.png" heroAlt="Etan hero">
             <ResetForm token={token} />
         </AuthShell>
     );

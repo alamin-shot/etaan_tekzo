@@ -21,3 +21,7 @@ export type UiSliceState = {
     toasts: Toast[];
     sessionOverlayVisible: boolean;
 };
+
+export type WishlistSliceState = {
+    ids: string[];
+};

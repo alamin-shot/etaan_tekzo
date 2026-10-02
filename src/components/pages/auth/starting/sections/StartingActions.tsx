@@ -4,11 +4,11 @@ import { ROUTES } from "@/config/routes";
 
 export function StartingActions() {
     return (
-        <div className="mt-10 flex flex-col gap-3 max-w-sm">
-            <Link href={ROUTES.login} className="block">
+        <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
+            <Link href={ROUTES.login}>
                 <Button variant="primary">Log in</Button>
             </Link>
-            <Link href={ROUTES.signup} className="block">
+            <Link href={ROUTES.signup}>
                 <Button variant="ghost">Sign up</Button>
             </Link>
         </div>

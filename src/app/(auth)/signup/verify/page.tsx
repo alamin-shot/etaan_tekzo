@@ -12,7 +12,7 @@ export default async function VerifyPage({
 }) {
     const { email = "" } = await searchParams;
     return (
-        <AuthShell heroSrc="/images/auth/hero-verify.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/authImg3.png" heroAlt="Etan hero">
             <VerifyForm email={email} />
         </AuthShell>
     );

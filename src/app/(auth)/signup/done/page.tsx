@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Account created — Etan" };
 
 export default function SignupDonePage() {
     return (
-        <AuthShell heroSrc="/images/auth/hero-done.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/authImg2.png" heroAlt="Etan hero">
             <DoneLeft />
         </AuthShell>
     );

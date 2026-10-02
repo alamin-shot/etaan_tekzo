@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Forgot password — Etan" };
 
 export default function ForgotPasswordPage() {
     return (
-        <AuthShell heroSrc="/images/auth/hero-forgot.jpg" heroAlt="Etan hero">
+        <AuthShell heroSrc="/image/auth_etaan.png" heroAlt="Etan hero">
             <ForgotForm />
         </AuthShell>
     );
