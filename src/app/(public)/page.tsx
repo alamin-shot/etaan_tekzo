@@ -1,3 +1,5 @@
+export const revalidate = 30;
+
 import { ShopHero, ShopSidebar, ShopToolbar, ShopGrid } from "@/components/pages/shop-seasons/sections";
 import { listProducts } from "@/services/products/list";
 
