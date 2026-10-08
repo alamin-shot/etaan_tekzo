@@ -3,6 +3,7 @@ import { StoreProvider } from "@/store/provider";
 import { SessionOverlay } from "@/components/features/auth/session-overlay";
 import "./globals.css";
 import { ToastHost } from "@/components/shared/toast/ToastHost";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-5CKW54PB" />
       <body>
         <StoreProvider>
           {children}
