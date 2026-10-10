@@ -4,17 +4,20 @@ export type ProductColour =
     | "orange" | "pink" | "purple" | "red" | "teal" | "white" | "yellow";
 
 export type ProductSize =
-    | "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "xxxl"
-    | "4xl" | "5xl" | "6xl";
+    | "s-36" | "m-38" | "l-40" | "xl-42" | "xxl-44";
 
 export type Product = {
     id: string;
+    slug: string;
     name: string;
     description: string;
+    longDescription: string;
     priceBdt: number;
     image: string;
-    colour: ProductColour;
+    images: string[];
+    colours: ProductColour[];
     sizes: ProductSize[];
     clothing: string;
     isNew?: boolean;
+    rating: number;
 };

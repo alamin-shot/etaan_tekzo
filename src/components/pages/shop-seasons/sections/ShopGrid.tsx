@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { ProductGrid } from "@/components/features/shop/grid";
+import { ProductGrid } from "@/components/features/shop/ProductGrid";
 import { Loader } from "@/components/shared/loader";
 import type { Product } from "@/types/product";
 

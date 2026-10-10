@@ -2,9 +2,9 @@
 
 import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { ProductCard } from "../card";
 import { parseShopParams } from "@/lib/parse-shop-params";
 import type { Product } from "@/types/product";
+import { ProductCard } from "./card";
 
 const PAGE_SIZE = 8;
 
@@ -15,7 +15,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
     const filtered = useMemo(() => {
         let list = [...products];
         if (params.clothing !== "all") list = list.filter((p) => p.clothing === params.clothing);
-        if (params.colour !== "all") list = list.filter((p) => p.colour === params.colour);
+        if (params.colour !== "all") list = list.filter((p) => p.colours.includes(params.colour as never));
         if (params.size !== "all") list = list.filter((p) => p.sizes.includes(params.size as never));
 
         if (params.sort === "price_asc") list.sort((a, b) => a.priceBdt - b.priceBdt);

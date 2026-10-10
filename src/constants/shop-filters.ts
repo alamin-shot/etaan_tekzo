@@ -23,15 +23,9 @@ export const COLOUR_OPTIONS = [
 
 export const SIZE_OPTIONS = [
     { value: "all", label: "All" },
-    { value: "xxs", label: "XXS" },
-    { value: "xs", label: "XS" },
-    { value: "s", label: "S" },
-    { value: "m", label: "M" },
-    { value: "l", label: "L" },
-    { value: "xl", label: "XL" },
-    { value: "xxl", label: "XXL" },
-    { value: "xxxl", label: "XXXL" },
-    { value: "4xl", label: "4XL" },
-    { value: "5xl", label: "5XL" },
-    { value: "6xl", label: "6XL" },
+    { value: "s-36", label: "S-36" },
+    { value: "m-38", label: "M-38" },
+    { value: "l-40", label: "L-40" },
+    { value: "xl-42", label: "XL-42" },
+    { value: "xxl-44", label: "XXL-44" },
 ] as const;

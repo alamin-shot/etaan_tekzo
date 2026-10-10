@@ -1,5 +1,5 @@
 import { FilterDrawer } from "@/components/features/shop/filters";
-import { SortDropdown } from "@/components/features/shop/sort";
+import { SortDropdown } from "@/components/features/shop/SortDropdown";
 
 export function ShopToolbar() {
     return (

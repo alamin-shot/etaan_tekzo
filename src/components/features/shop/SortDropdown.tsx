@@ -2,7 +2,7 @@
 
 import { Dropdown } from "@/components/ui/dropdown";
 import { SORT_OPTIONS } from "@/constants/sort-options";
-import { useShopParams } from "../filters/use-shop-params";
+import { useShopParams } from "./filters";
 
 export function SortDropdown() {
     const { params, setParam } = useShopParams();
